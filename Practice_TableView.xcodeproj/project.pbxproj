@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A63DA17501701571E95ADB0E /* Pods_Practice_TableView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A867CA6A0863B83BBAF8B61A /* Pods_Practice_TableView.framework */; };
 		D332F86F24B15AE100884E93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332F86E24B15AE100884E93 /* AppDelegate.swift */; };
 		D332F87124B15AE100884E93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332F87024B15AE100884E93 /* SceneDelegate.swift */; };
 		D332F87324B15AE100884E93 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332F87224B15AE100884E93 /* ViewController.swift */; };
@@ -14,9 +15,13 @@
 		D332F87824B15AE300884E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D332F87724B15AE300884E93 /* Assets.xcassets */; };
 		D332F87B24B15AE300884E93 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D332F87924B15AE300884E93 /* LaunchScreen.storyboard */; };
 		D332F88324B1644B00884E93 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332F88224B1644B00884E93 /* CustomTableViewCell.swift */; };
+		D332F88624B16B3700884E93 /* CustomTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D332F88424B16B3700884E93 /* CustomTableViewCell2.swift */; };
+		D332F88724B16B3700884E93 /* CustomTableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D332F88524B16B3700884E93 /* CustomTableViewCell2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		152092185DE2D19686FC840C /* Pods-Practice_TableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice_TableView.release.xcconfig"; path = "Target Support Files/Pods-Practice_TableView/Pods-Practice_TableView.release.xcconfig"; sourceTree = "<group>"; };
+		A867CA6A0863B83BBAF8B61A /* Pods_Practice_TableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Practice_TableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D332F86B24B15AE100884E93 /* Practice_TableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practice_TableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D332F86E24B15AE100884E93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D332F87024B15AE100884E93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +31,9 @@
 		D332F87A24B15AE300884E93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D332F87C24B15AE300884E93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D332F88224B1644B00884E93 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D332F88424B16B3700884E93 /* CustomTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell2.swift; sourceTree = "<group>"; };
+		D332F88524B16B3700884E93 /* CustomTableViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell2.xib; sourceTree = "<group>"; };
+		DD0FA3623F019A1696AED441 /* Pods-Practice_TableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Practice_TableView.debug.xcconfig"; path = "Target Support Files/Pods-Practice_TableView/Pods-Practice_TableView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A63DA17501701571E95ADB0E /* Pods_Practice_TableView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183601AD9E41CAB3FF154EEF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A867CA6A0863B83BBAF8B61A /* Pods_Practice_TableView.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D332F86224B15AE100884E93 = {
 			isa = PBXGroup;
 			children = (
 				D332F86D24B15AE100884E93 /* Practice_TableView */,
 				D332F86C24B15AE100884E93 /* Products */,
+				D9C6E688675EADAAFA2262A3 /* Pods */,
+				183601AD9E41CAB3FF154EEF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,8 +85,20 @@
 				D332F87924B15AE300884E93 /* LaunchScreen.storyboard */,
 				D332F87C24B15AE300884E93 /* Info.plist */,
 				D332F88224B1644B00884E93 /* CustomTableViewCell.swift */,
+				D332F88424B16B3700884E93 /* CustomTableViewCell2.swift */,
+				D332F88524B16B3700884E93 /* CustomTableViewCell2.xib */,
 			);
 			path = Practice_TableView;
+			sourceTree = "<group>";
+		};
+		D9C6E688675EADAAFA2262A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD0FA3623F019A1696AED441 /* Pods-Practice_TableView.debug.xcconfig */,
+				152092185DE2D19686FC840C /* Pods-Practice_TableView.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D332F87F24B15AE300884E93 /* Build configuration list for PBXNativeTarget "Practice_TableView" */;
 			buildPhases = (
+				B37820595B1F85991C33A7EF /* [CP] Check Pods Manifest.lock */,
 				D332F86724B15AE100884E93 /* Sources */,
 				D332F86824B15AE100884E93 /* Frameworks */,
 				D332F86924B15AE100884E93 /* Resources */,
+				D9CA34631686C9B58221E8E1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,12 +162,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				D332F87B24B15AE300884E93 /* LaunchScreen.storyboard in Resources */,
+				D332F88724B16B3700884E93 /* CustomTableViewCell2.xib in Resources */,
 				D332F87824B15AE300884E93 /* Assets.xcassets in Resources */,
 				D332F87624B15AE100884E93 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B37820595B1F85991C33A7EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Practice_TableView-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9CA34631686C9B58221E8E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practice_TableView/Pods-Practice_TableView-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Practice_TableView/Pods-Practice_TableView-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Practice_TableView/Pods-Practice_TableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D332F86724B15AE100884E93 /* Sources */ = {
@@ -144,6 +220,7 @@
 				D332F87324B15AE100884E93 /* ViewController.swift in Sources */,
 				D332F86F24B15AE100884E93 /* AppDelegate.swift in Sources */,
 				D332F88324B1644B00884E93 /* CustomTableViewCell.swift in Sources */,
+				D332F88624B16B3700884E93 /* CustomTableViewCell2.swift in Sources */,
 				D332F87124B15AE100884E93 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +363,7 @@
 		};
 		D332F88024B15AE300884E93 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD0FA3623F019A1696AED441 /* Pods-Practice_TableView.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +382,7 @@
 		};
 		D332F88124B15AE300884E93 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 152092185DE2D19686FC840C /* Pods-Practice_TableView.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import XLActionController
+import ProgressHUD
 
 class ViewController: UIViewController {
 
@@ -25,6 +27,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        tableView.register(CustomTableViewCell2.nib(), forCellReuseIdentifier: CustomTableViewCell2.identifier)
+        
+        ProgressHUD.show()
+        ProgressHUD.animationType = .horizontalCirclesPulse
+        ProgressHUD.colorAnimation = .red
+        ProgressHUD.colorBackground = .black
+        
     }
 
 
@@ -42,30 +52,88 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell01", for: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell2.identifier, for: indexPath) as! CustomTableViewCell2
         
         cell.imgView.image = UIImage(named: restaurantImages[indexPath.row])
         cell.nameLabel.text = restaurantNames[indexPath.row]
         cell.locationLabel.text = restaurantLocations[indexPath.row]
         cell.typeLabel.text = restaurantTypes[indexPath.row]
+
         
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell01", for: indexPath) as! CustomTableViewCell
+//
+//        cell.imgView.image = UIImage(named: restaurantImages[indexPath.row])
+//        cell.nameLabel.text = restaurantNames[indexPath.row]
+//        cell.locationLabel.text = restaurantLocations[indexPath.row]
+//        cell.typeLabel.text = restaurantTypes[indexPath.row]
+//
         
 //        cell.textLabel?.text = restaurantNames[indexPath.row]
 //        cell.detailTextLabel?.text = restaurantLocations[indexPath.row]
 //        cell.imageView?.image = UIImage(named: restaurantImages[indexPath.row])
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
-        let alert = UIAlertController(title: "알림", message: restaurantNames[indexPath.row], preferredStyle: .actionSheet)
+//        let alert = UIAlertController(title: "알림", message: restaurantNames[indexPath.row], preferredStyle: .actionSheet)
+//
+//        let alertAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+//
+//        alert.addAction(alertAction)
+//
+        // self.present(alert, animated: true, completion: nil)
         
-        let alertAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
         
-        alert.addAction(alertAction)
         
-        self.present(alert, animated: true, completion: nil)
+        let actionController = YoutubeActionController()
+        let addButton = Action(ActionData(title: "add to watch later", image: UIImage(named: "yt-add-to-watch-later-icon")!), style: .default, handler: nil)
+
+        let playListButton = Action(ActionData(title: "play list", image: UIImage(named: "yt-add-to-playlist-icon")!), style: .default, handler: nil)
+        
+        let shareButton = Action(ActionData(title: "share", image: UIImage(named: "yt-share-icon")!), style: .default, handler: nil)
+        
+        let cancelButton = Action(ActionData(title: "cancel", image: UIImage(named: "yt-cancel-icon")!), style: .default, handler: nil)
+        
+        actionController.addAction(addButton)
+        actionController.addAction(playListButton)
+        actionController.addAction(shareButton)
+        actionController.addAction(cancelButton)
+        
+        present(actionController, animated: true, completion: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        return UISwipeActionsConfiguration()
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let checkAction = UIContextualAction(style: .normal, title: "share") { (action, sourceView, handler) in
+            // 공유하기 기능
+            
+            // SVProgressHUD.show()
+            
+            handler(true)
+        }
+        checkAction.backgroundColor = .green
+        checkAction.image = UIImage(systemName: "square.and.arrow.up")
+        
+        let trashAction = UIContextualAction(style: .normal, title: "trash") { (action, sourceView, handler) in
+            // 공유하기 기능
+            handler(true)
+        }
+        trashAction.backgroundColor = .red
+        trashAction.image = UIImage(systemName: "trash")
+        
+        
+        
+        
+        let swipeActions = UISwipeActionsConfiguration(actions: [checkAction, trashAction])
+        
+        return swipeActions
     }
     
     
